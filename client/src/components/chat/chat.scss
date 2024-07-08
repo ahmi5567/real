@@ -1,0 +1,169 @@
+.chat {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      opacity: 0;
+      visibility: hidden; /* Scrollbar ki width */
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #888; /* Scrollbar thumb ka color */
+      border-radius: 10px; /* Scrollbar thumb ke liye rounded corners */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555; /* Scrollbar thumb ka color hover par */
+    }
+    &:hover::-webkit-scrollbar,
+    &:active::-webkit-scrollbar {
+      opacity: 1; /* Show scrollbar on hover or active */
+      visibility: visible; /* Show scrollbar on hover or active */
+    }
+    &.scrolling::-webkit-scrollbar {
+      opacity: 1; /* Show scrollbar while scrolling */
+      visibility: visible; /* Show scrollbar while scrolling */
+    }
+
+
+    h1 {
+      font-weight: 300;
+    }
+
+    .message {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      cursor: pointer;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .chatBox {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .top {
+      background-color: #f7c14b85;
+      padding: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+      .close {
+        cursor: pointer;
+      }
+    }
+    .center {
+      height: 350px;
+      overflow: scroll;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+        opacity: 0;
+        visibility: hidden; /* Scrollbar ki width */
+        transition: opacity 0.3s, visibility 0.3s;
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background: #888; /* Scrollbar thumb ka color */
+        border-radius: 10px; /* Scrollbar thumb ke liye rounded corners */
+      }
+  
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Scrollbar thumb ka color hover par */
+      }
+      &:hover::-webkit-scrollbar,
+      &:active::-webkit-scrollbar {
+        opacity: 1; /* Show scrollbar on hover or active */
+        visibility: visible; /* Show scrollbar on hover or active */
+      }
+      &.scrolling::-webkit-scrollbar {
+        opacity: 1; /* Show scrollbar while scrolling */
+        visibility: visible; /* Show scrollbar while scrolling */
+      }
+  
+
+      .chatMessage{
+        width: 50%;
+
+        &.own{
+          align-self: flex-end;
+          text-align: right;
+        }
+
+        span{
+          font-size: 12px;
+          background-color: #f7c14b39;
+          padding: 2px;
+          border-radius: 5px;
+        }
+      }
+    }
+    .bottom {
+      border-top: 2px solid #f7c14b85;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      textarea{
+        flex:3;
+        height: 100%;
+        border: none;
+        padding: 20px;
+      }
+
+      button{
+        flex:1;
+        background-color: #f7c14b85;
+        height: 100%;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

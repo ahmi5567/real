@@ -1,0 +1,141 @@
+@import "../../responsive.scss";
+
+.profilePage {
+  display: flex;
+  height: 100%;
+
+  @include md{
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .details {
+    flex: 3;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      opacity: 0;
+      visibility: hidden; /* Scrollbar ki width */
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #888; /* Scrollbar thumb ka color */
+      border-radius: 10px; /* Scrollbar thumb ke liye rounded corners */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555; /* Scrollbar thumb ka color hover par */
+    }
+    &:hover::-webkit-scrollbar,
+    &:active::-webkit-scrollbar {
+      opacity: 1; /* Show scrollbar on hover or active */
+      visibility: visible; /* Show scrollbar on hover or active */
+    }
+    &.scrolling::-webkit-scrollbar {
+      opacity: 1; /* Show scrollbar while scrolling */
+      visibility: visible; /* Show scrollbar while scrolling */
+    }
+
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      opacity: 0;
+      visibility: hidden; /* Scrollbar ki width */
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #888; /* Scrollbar thumb ka color */
+      border-radius: 10px; /* Scrollbar thumb ke liye rounded corners */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555; /* Scrollbar thumb ka color hover par */
+    }
+    &:hover::-webkit-scrollbar,
+    &:active::-webkit-scrollbar {
+      opacity: 1; /* Show scrollbar on hover or active */
+      visibility: visible; /* Show scrollbar on hover or active */
+    }
+    &.scrolling::-webkit-scrollbar {
+      opacity: 1; /* Show scrollbar while scrolling */
+      visibility: visible; /* Show scrollbar while scrolling */
+    }
+
+
+    @include md{
+      flex:none;
+      height: max-content;
+    }
+
+    .wrapper{
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      .title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1{
+          font-weight: 300;
+        }
+
+        button{
+          padding: 12px 24px;
+          background-color: #fece51;
+          cursor: pointer;
+          border: none;
+        }
+      }
+
+      .info{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span{
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        } 
+
+        button{
+          padding: 12px 24px;
+          background-color: #2e6b2e;
+          cursor: pointer;
+          border: none;
+          width: fit-content;
+          color: white;
+        }
+
+        img{
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  .chatContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    height: 100%;
+
+    @include md{
+      flex:none;
+      height: max-content;
+    }
+
+    .wrapper{
+      padding: 0px 20px;
+      height: 100%;
+    }
+  }
+}
